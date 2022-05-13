@@ -10,12 +10,12 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
-
+const hostName = "0.0.0.0";
 
 const port = process.env.PORT || 5000;
 const uri = process.env.DB_URL
 
-app.listen(5000, console.log(` Server running on port ${port}`));
+app.listen(5000, hostName, console.log(` Server running on port ${port}`));
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
